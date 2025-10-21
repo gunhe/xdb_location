@@ -1,13 +1,9 @@
 # Xdb_Location
-
-![PyPI version](https://img.shields.io/pypi/v/xdb_location.svg)
-[![Documentation Status](https://readthedocs.org/projects/xdb_location/badge/?version=latest)](https://xdb_location.readthedocs.io/en/latest/?version=latest)
-
-a geographic information database
+地理信息数据库
 
 * PyPI package: https://pypi.org/project/xdb_location/
+* Github: https://github.com/gunhe/xdb_location
 * Free software: MIT License
-* Documentation: https://xdb_location.readthedocs.io.
 
 ## 使用
 ```bash
@@ -17,9 +13,13 @@ print(target_ip_location)
 ```
 ## Features
 
-* 添加缓存
+* ip2region xdb python 生成实现
+* ip2region xdb python 生成实现
 
 ## Credits
+
+[uv](https://docs.astral.sh/uv/)
+
 [Cookiecutter](https://github.com/audreyfeldroy/cookiecutter)
 
 [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage)

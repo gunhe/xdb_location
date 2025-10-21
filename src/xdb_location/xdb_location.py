@@ -1,4 +1,5 @@
 """Main module."""
+
 from xdb_location.xdb.xdbSearcher import XdbSearcher
 from pathlib import Path
 
@@ -37,6 +38,7 @@ def searchWithVectorIndex():
     # 4. 关闭searcher
     searcher.close()
 
+
 def searchWithContent(target_ip):
     # 1. 预先加载整个 xdb
     dbPath = Path(__file__).parent / "xdb" / "ip2region.xdb"
@@ -59,6 +61,6 @@ def searchWithContentCache():
     return searcher
 
 
+
 if __name__ == "__main__":
     print(searchWithContent(target_ip="1.15.241.228"))
-    

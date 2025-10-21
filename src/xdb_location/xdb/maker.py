@@ -54,9 +54,9 @@ import struct
 import time
 import sys
 
-import xdb.segment as seg
-import xdb.index as idx
-import xdb.util as util
+import xdb_location.xdb.segment as seg
+import xdb_location.xdb.index as idx
+import xdb_location.xdb.util as util
 
 
 Version_No = 2
