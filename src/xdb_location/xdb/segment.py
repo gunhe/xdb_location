@@ -5,7 +5,7 @@
 # Author: linyufeng <leolin49@foxmail.com>
 # Date  : 2022/7/14 17:00
 #
-import xdb.util as util
+import xdb_location.xdb.util as util
 
 
 class Segment:
