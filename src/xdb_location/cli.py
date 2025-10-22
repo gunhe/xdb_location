@@ -17,19 +17,7 @@ def main(src: str,dst: str):
     # console.print("See Typer documentation at https://typer.tiangolo.com/")
     # utils.do_something_useful()
     utils.gen_db(src,dst)
-    console.print("rebuild_ip2region done!")
 
-
-@app.command()
-def create():
-    """Console script for xdb_location."""
-    console.print("create done!")
-
-
-@app.command()
-def delete():
-    """Console script for xdb_location."""
-    console.print("delete done!")
 
 
 if __name__ == "__main__":
