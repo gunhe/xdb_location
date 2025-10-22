@@ -11,6 +11,21 @@ def loadsPath(dbPath):
         dbPath = Path(__file__).parent / "xdb" / "ip2region.xdb"
     return dbPath
 
+def searchWithVectorIndex(dbPath):
+    # 1. 预先加载整个 xdb
+    dbPath = loadsPath(dbPath)
+    vi = XdbSearcher.loadVectorIndexFromFile(dbfile=dbPath)
+    # 2. 使用上面的缓存创建查询对象, 同时也要加载 xdb 文件
+    searcher = XdbSearcher(dbfile=dbPath, vectorIndex=vi)
+
+    # 3. 执行查询
+    ip = "1.2.3.4"
+    region_str = searcher.search(ip)
+    print(region_str)
+
+    # 4. 关闭searcher
+    searcher.close()
+
 
 def searchWithVectorIndex(dbPath):
     # 1. 预先加载整个 xdb
@@ -28,23 +43,7 @@ def searchWithVectorIndex(dbPath):
     searcher.close()
 
 
-def searchWithVectorIndex():
-    # 1. 预先加载整个 xdb
-    dbPath = loadsPath(dbPath)
-
-    # 2. 使用上面的缓存创建查询对象, 同时也要加载 xdb 文件
-    searcher = XdbSearcher(dbfile=dbPath, vectorIndex=vi)
-
-    # 3. 执行查询
-    ip = "1.2.3.4"
-    region_str = searcher.search(ip)
-    print(region_str)
-
-    # 4. 关闭searcher
-    searcher.close()
-
-
-def searchWithContent(target_ip):
+def searchWithContent(target_ip="114.114.114.114", dbPath=None):
     # 1. 预先加载整个 xdb
     dbPath = loadsPath(dbPath)
     cb = XdbSearcher.loadContentFromFile(dbfile=dbPath)
