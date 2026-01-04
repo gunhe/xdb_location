@@ -1,6 +1,6 @@
 [project]
 name = "xdb_location"
-version = "0.1.19"
+version = "0.1.20"
 description = "a geographic information database"
 readme = "README.md"
 authors = [
