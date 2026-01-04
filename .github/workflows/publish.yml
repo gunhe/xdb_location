@@ -24,10 +24,10 @@ jobs:
       - name: Build
         run: uv build
       # Check that basic features work and we didn't miss to include crucial files
-      - name: Install requirements
-        run: uv pip install -r requirements.txt
-        env:
-          PIP_CACHE_DIR: ${{ github.workspace }}/.pip_cache
+      # - name: Install requirements
+      #   run: uv pip install -r requirements.txt
+      #   env:
+      #     PIP_CACHE_DIR: ${{ github.workspace }}/.pip_cache
       
       # - name: Smoke test (wheel)
       #   run: uv run --isolated --no-project --with dist/*.whl tests/smoke_test.py
