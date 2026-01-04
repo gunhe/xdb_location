@@ -6,6 +6,9 @@ on:
       # Publish on any tag starting with a `v`, e.g., v0.1.0
       - v*
 
+# env:
+#   UV_SYSTEM_PYTHON: 1
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -23,14 +26,14 @@ jobs:
         run: uv python install 3.10
       - name: Build
         run: uv build
+      - name: Create and sync environment
+        # This command creates the .venv and installs dependencies
+        run: uv sync
       # Check that basic features work and we didn't miss to include crucial files
-      # - name: Install requirements
-      #   run: uv pip install -r requirements.txt
-      #   env:
-      #     PIP_CACHE_DIR: ${{ github.workspace }}/.pip_cache
-      
+      - name: Run tests with pytest
+        run: uv run pytest
       # - name: Smoke test (wheel)
-      #   run: uv run --isolated --no-project --with dist/*.whl tests/smoke_test.py
+        # run: uv run --isolated --no-project --with dist/*.whl tests/test_xdb_location.py
       # - name: Smoke test (source distribution)
       #   run: uv run --isolated --no-project --with dist/*.tar.gz tests/smoke_test.py
       - name: Publish
