@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def loadsPath(dbPath):
-    if not isinstance(dbPath, Path):
+    if dbPath:
         dbPath = Path(dbPath)
     else:
         dbPath = Path(__file__).parent / "xdb" / "ip2region.xdb"
@@ -65,4 +65,4 @@ def searchWithContentCache(dbPath=None):
 
 if __name__ == "__main__":
     print(searchWithContent(target_ip="1.15.241.228"))
-    print(searchWithContentCache().search(target_ip="1.15.241.228"))
+    print(searchWithContentCache().search("1.15.241.228"))

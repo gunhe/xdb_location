@@ -45,6 +45,20 @@ target_ip_location = searchWithContent(target_ip="1.15.241.228")
 print(target_ip_location)
 ```
 
+## 最佳实践
+```bash
+# 程序启动前把 searchWithContent 对象缓存下来，做成一个全局对象
+from xdb_location.xdb_location import searchWithContentCache
+
+# 使用searchWithContent 对象来查询
+searcher = searchWithContentCache()
+target_ip_location = searcher.search("1.15.241.228")
+print(target_ip_location)
+
+# 程序结束时候释放内存空间
+searcher.close()
+```
+
 # 数据生成
 
 ```bash
