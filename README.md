@@ -31,12 +31,6 @@ Xdb_Location的源文件可以从以下网址下载 [Github repo](https://github
 git clone git://github.com/gunhe/xdb_location
 ```
 
-或者下载 [tarball](https://github.com/gunhe/xdb_location/tarball/master):
-
-```sh
-curl -OJL https://github.com/gunhe/xdb_location/tarball/master
-```
-
 一旦你有了源代码的副本，你就可以用以下方式安装它：
 
 ```sh

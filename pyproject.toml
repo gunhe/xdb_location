@@ -1,6 +1,6 @@
 [project]
 name = "xdb_location"
-version = "0.1.6"
+version = "0.1.7"
 description = "a geographic information database"
 readme = "README.md"
 authors = [
@@ -16,7 +16,7 @@ license = {text = "MIT"}
 dependencies = [
   "typer"
 ]
-requires-python = ">= 3.10"
+requires-python = ">= 3.8"
 
 [project.optional-dependencies]
 test = [
