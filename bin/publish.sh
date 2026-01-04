@@ -4,7 +4,7 @@ set -e
 # 提交代码
 # 修改版本信息
 # Bump version in pyproject.toml
-version="0.1.35"
+version="0.1.36"
 parent_dir=$(dirname "$(pwd)")
 cd $parent_dir
 uv version $version

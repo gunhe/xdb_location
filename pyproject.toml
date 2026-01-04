@@ -1,6 +1,6 @@
 [project]
 name = "xdb_location"
-version = "0.1.35"
+version = "0.1.36"
 description = "a geographic information database"
 readme = "README.md"
 authors = [
@@ -15,7 +15,7 @@ classifiers = [
 license = {text = "MIT"}
 dependencies = [
   "pytest>=8.3.5",
-  "requests>=2.32.4",
+  "requests>=2.31.0",
   "typer",
 ]
 requires-python = ">= 3.8"
