@@ -1,6 +1,6 @@
 [project]
 name = "xdb_location"
-version = "0.1.36"
+version = "0.1.37"
 description = "a geographic information database"
 readme = "README.md"
 authors = [
@@ -31,7 +31,7 @@ test = [
 
 [project.urls]
 bugs = "https://github.com/gunhe/xdb_location/issues"
-changelog = "https://github.com/gunhe/xdb_location/blob/master/changelog.md"
+changelog = "https://github.com/gunhe/xdb_location/blob/master/HISTORY.md"
 homepage = "https://github.com/gunhe/xdb_location"
 
 [project.scripts]

@@ -4,12 +4,12 @@ set -e
 # 提交代码
 # 修改版本信息
 # Bump version in pyproject.toml
-version="0.1.36"
+version="0.1.37"
 parent_dir=$(dirname "$(pwd)")
 cd $parent_dir
 uv version $version
-git add ./bin/publish.sh
-git add ./pyproject.toml
+# git add ./bin/publish.sh
+# git add ./pyproject.toml
 git commit -m "Bump version to v$version"
 # 推送代码到远程仓库
 git  push

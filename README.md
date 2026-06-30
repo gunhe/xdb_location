@@ -45,6 +45,57 @@ target_ip_location = searchWithContent(target_ip="1.15.241.228")
 print(target_ip_location)
 ```
 
+## 虚拟号查询
+
+查询手机号是否命中虚拟运营商号段库：
+
+```python
+from virtual_phone import virtual_number_searcher
+
+result = virtual_number_searcher("17040655743")
+print(result)
+```
+
+返回示例：
+
+```python
+{
+    "section": "1704065",
+    "area": "福建 漳州",
+    "network": "联通网络",
+    "provider": "天音移动",
+    "company": "天音通信",
+    "is_virtual_number": True,
+    "phone_number": "17040655743",
+}
+```
+
+字段说明：
+
+| 字段 | 说明 |
+| --- | --- |
+| `section` | 手机号前 7 位号段 |
+| `area` | 号段归属地 |
+| `network` | 使用网络 |
+| `provider` | 虚拟运营商品牌 |
+| `company` | 虚拟运营商所属公司 |
+| `is_virtual_number` | 是否命中虚拟号段库 |
+| `phone_number` | 原始查询手机号 |
+
+如果未命中虚拟号段库，`is_virtual_number` 为 `False`，其余未知字段返回 `未知`：
+
+```python
+{
+    "section": "1582732",
+    "area": "未知",
+    "network": "未知",
+    "provider": "未知",
+    "company": "未知",
+    "is_virtual_number": False,
+    "phone_number": "15827325745",
+}
+```
+
 ## 最佳实践
 ```bash
 # 程序启动前把 searchWithContent 对象缓存下来，做成一个全局对象
@@ -87,5 +138,3 @@ uv run xdb_location ./src/xdb_location/data/ipv6_source.txt ./ip2region.ipv6_sou
 [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage)
 
 [https://github.com/lionsoul2014/ip2region](https://github.com/lionsoul2014/ip2region)
-
-
