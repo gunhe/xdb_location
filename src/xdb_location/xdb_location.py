@@ -1,5 +1,6 @@
 """Main module."""
 
+from xdb_location.virtual_phone import _normalize_section, _unknown_record, virtual_number_loader
 from xdb_location.xdb.xdbSearcher import XdbSearcher
 from pathlib import Path
 
@@ -63,6 +64,24 @@ def searchWithContentCache(dbPath=None):
     return searcher
 
 
+
+def virtual_number_searcher(phone_number):
+    section = _normalize_section(phone_number)
+    data_dict = virtual_number_loader()
+    if not data_dict:
+        return _unknown_record(section)
+    record = data_dict.get(section)
+    if record:
+        record["is_virtual_number"] = True
+    else:
+        record = _unknown_record(section)
+        record["is_virtual_number"] = False
+    record["phone_number"] = phone_number
+    return record
+
+
 if __name__ == "__main__":
+    print(virtual_number_searcher(phone_number="17040655743"))
+    print(virtual_number_searcher(phone_number="15827325745"))
     print(searchWithContent(target_ip="1.15.241.228"))
     print(searchWithContentCache().search("1.15.241.228"))
