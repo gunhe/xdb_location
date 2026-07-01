@@ -5,7 +5,7 @@ from typing import Any, Callable, Dict, Optional, Union
 
 
 UNKNOWN = "未知"
-DATA_FILE = Path(__file__).parent / "virtual_phone_data" / "data_virtual_number.csv"
+DATA_FILE = Path(__file__).parent / "data_virtual_phone" / "virtual_phone.csv"
 FIELD_NAMES = ("section", "area", "network", "provider", "company")
 
 

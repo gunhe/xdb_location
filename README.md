@@ -45,12 +45,13 @@ target_ip_location = searchWithContent(target_ip="1.15.241.228")
 print(target_ip_location)
 ```
 
+# 虚拟号
 ## 虚拟号查询
 
 查询手机号是否命中虚拟运营商号段库：
 
 ```python
-from virtual_phone import virtual_number_searcher
+from xdb_location.virtual_phone import virtual_number_searcher
 
 result = virtual_number_searcher("17040655743")
 print(result)
@@ -84,18 +85,7 @@ print(result)
 
 如果未命中虚拟号段库，`is_virtual_number` 为 `False`，其余未知字段返回 `未知`：
 
-```python
-{
-    "section": "1582732",
-    "area": "未知",
-    "network": "未知",
-    "provider": "未知",
-    "company": "未知",
-    "is_virtual_number": False,
-    "phone_number": "15827325745",
-}
-```
-
+# IP地理位置
 ## 最佳实践
 ```bash
 # 程序启动前把 searchWithContent 对象缓存下来，做成一个全局对象
@@ -110,7 +100,7 @@ print(target_ip_location)
 searcher.close()
 ```
 
-# 数据生成
+## 数据生成
 
 ```bash
 git clone https://github.com/gunhe/xdb_location.git
